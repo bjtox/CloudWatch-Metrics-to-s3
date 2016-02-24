@@ -5,8 +5,6 @@ Export-CloudWatch-Metrics è uno scritp che permette di esportare direttamente l
 
 ## Prerequisiti
 
-The Node.js project maintains multiple types of releases:
-
 * Python 3 o maggiore
 * boto3
 * AWS cli configured on machine
