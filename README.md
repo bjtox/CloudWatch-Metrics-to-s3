@@ -36,7 +36,7 @@ comando da eseguire
 $ python getCWMetrics.py -n 'nameSpace' -i 'istanceId' -m 'metric _name' -s 'statistic' -u 'unit' -p 'period' -S 'YYYY-MM-DD hh:mm:ss' -E 'YYYY-MM-DD hh:mm:ss' -b 'bucketName'
 ```
 
-## Name Space
+## Parameters
 
 * **Aws Namespaces** documentation [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/aws-namespaces.html)
 
