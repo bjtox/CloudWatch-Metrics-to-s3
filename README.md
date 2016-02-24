@@ -67,4 +67,4 @@ $ python getCWMetrics.py -n 'nameSpace' -i 'istanceId' -m 'metric _name' -s 'sta
 
 ### Result
 
-Il risultato che andrete ad ottenere è il seguente: nel bucket di s3 che avete designato come ospitante delle metriche, verrà creato un oggetto con il seguente percorso "metrics-logs/20160210-20160220/i-91f55819_CPUUtilization.log". L'oggetto è formato dal periodo monitorato, l'id della macchina ec2 e il nome della metrica che richiedete.
+Il risultato che andrete ad ottenere è il seguente: nel bucket di s3 che avete designato come ospitante delle metriche, verrà creato un oggetto con il seguente percorso "metrics-logs/20160210-20160220/i-abcdefghi_CPUUtilization.log". L'oggetto è formato dal periodo monitorato, l'id della macchina ec2 e il nome della metrica che richiedete.
