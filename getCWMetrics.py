@@ -46,6 +46,13 @@ def pushToS3(bucket, key, json):
 	    Bucket=bucket,
 	    Key=key,
 	)
+
+def createObjectName(dateStart, dateEnd, Namespace, MetricName, Statistics, instanceID):
+	start_time = datetime(int(dateStart[0]),int(dateStart[1]),int(dateStart[2])).strftime("%Y%m%d")
+	end_time = datetime(int(dateEnd[0]),int(dateEnd[1]),int(dateEnd[2])).strftime("%Y%m%d")
+
+	return 'metrics-logs/'+start_time+'-'+end_time+'/'+Namespace+'_'+instanceID+'_'+MetricName+'_'+Statistics+'.log'
+
 	
 def main():
 	usage = "usage: %prog [options] arg"
@@ -95,7 +102,7 @@ def main():
 
 
 	response = getMetrics(instance_id,name_space,metric_name,statistic,unit,startTime,endTime,period)
-	pushToS3(bucket_name,'metrics-logs/'+datetime(int(options.start_time[0]),int(options.start_time[1]),int(options.start_time[2])).strftime("%Y%m%d")+'-'+datetime(int(options.end_time[0]),int(options.end_time[1]),int(options.end_time[2])).strftime("%Y%m%d")+'/'+instance_id+'_'+metric_name+'.log', response)		
+	pushToS3(bucket_name, createObjectName(options.start_time,options.end_time,name_space,metric_name,statistic,instance_id), response)		
 	
 
 
