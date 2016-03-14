@@ -12,7 +12,7 @@ def prepareDate(date):
 	return result.split('-')
 
 def getMetrics(instanceId, name_space, metricName, statistics, unit, startTime, endTime, period):
-	cloud_watch = boto3.client('cloudwatch')
+	cloud_watch = boto3.client('cloudwatch',region_name='eu-west-1')
 
 	response = cloud_watch.get_metric_statistics(
 		Namespace=name_space,
@@ -40,7 +40,7 @@ def getMetrics(instanceId, name_space, metricName, statistics, unit, startTime, 
 
 
 def pushToS3(bucket, key, json):
-	s3 = boto3.client('s3')
+	s3 = boto3.client('s3',region_name='eu-west-1')
 	response = s3.put_object(
 		Body=bytes(str(json), encoding="UTF-8"),
 	    Bucket=bucket,
